@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 20:47:33 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/26 22:00:45 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/05/27 12:15:56 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ void	chek_lenght(char *s)
 		{
 			i = ft_atoi(s);
 			if (i > 2147483647 || i < -2147483648)
-				exit (write(2, "Error\n", 6));
+				panic("Error\n");
 			else
 				return ;
 		}
 		else
-			exit(write(2, "Error\n", 6));
+			panic("Error\n");
 	}
 }
 
@@ -68,10 +68,7 @@ void	chek_duplicate(char **s)
 		while (s[j])
 		{
 			if (ft_atoi(s[i]) == ft_atoi(s[j]))
-			{
-				write(2, "Error\n", 6);
-				exit(1);
-			}
+				panic("Error\n");
 			else
 				j++;
 		}
@@ -91,7 +88,7 @@ void	chek_sort(char **s)
 	while (ft_atoi(s[i]) < ft_atoi(s[i + 1]) && i < j - 1)
 		i++;
 	if (j == i + 1)
-		exit(1);
+		exit(EXIT_SUCCESS);
 }
 
 int	*intcpy(char **s)
@@ -106,10 +103,7 @@ int	*intcpy(char **s)
 		len++;
 	arr = (int *)malloc(sizeof(int) * (len));
 	if (!arr)
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
+		panic("Error\n");
 	j = 0;
 	i = -1;
 	while (s[++i] != '\0')

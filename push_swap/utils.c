@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:46:00 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/26 21:07:26 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/05/28 16:55:34 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,17 @@ long	ft_atoi(const char *str)
 		++str;
 	}
 	return (num * neg);
+}
+
+int	ft_lstsize(t_list *lst)
+{
+	int		i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

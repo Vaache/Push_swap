@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_nodes.c                                       :+:      :+:    :+:   */
+/*   panic.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 21:32:17 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/27 13:25:44 by vhovhann         ###   ########.fr       */
+/*   Created: 2023/05/27 12:17:39 by vhovhann          #+#    #+#             */
+/*   Updated: 2023/05/27 12:17:41 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*fill_nodes(int *arr, char **str, t_list *list, int len)
+void	panic(char *str)
 {
-	int		i;
-	int		j;
-	t_list	*tmp;
-
-	i = 0;
-	j = 0;
-	tmp = list;
-	while (j < len)
-	{
-		if (str[i] && arr[j] == ft_atoi(str[i]))
-		{
-			tmp = push_back(tmp, ft_atoi(str[i]), j);
-			i++;
-			j = 0;
-		}
-		else
-			j++;
-	}
-	list = tmp;
-	return (list);
+	write(2, str, ft_strlen(str));
+	exit(EXIT_FAILURE);
 }

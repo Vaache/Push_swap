@@ -6,11 +6,23 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:18 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/26 22:03:29 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/05/28 16:07:08 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	test1(t_list *list)
+{
+	printf("###############################\n");
+	while (list)
+	{
+		printf("data = [%d] ", list->data);
+		printf("index = [%d] \n", list->index);
+		list = list->next;
+	}
+	printf("###############################\n");
+}
 
 void	check_valid(char **str)
 {
@@ -24,14 +36,11 @@ void	check_valid(char **str)
 		while (str[i][j])
 		{
 			if ((str[i][j] == '-' || str[i][j] == '+') && j != 0)
-				exit(write(2, "Error\n", 6));
+				panic("Error\n");
 			if (str[i][j] == '-' || str[i][j] == '+')
 				j++;
 			if (str[i][j] < '0' || str[i][j] > '9')
-			{
-				write(2, "Error\n", 6);
-				exit(1);
-			}
+				panic("Error\n");
 			j++;
 		}
 	}
@@ -41,12 +50,18 @@ int	main(int ac, char **av)
 {
 	int		len;
 	char	**str;
-	t_list	*list;
+	t_list	*a;
+	t_list	*b;
 
-	len = 1;
-	list = NULL;
+	a = NULL;
+	b = NULL;
 	if (ac <= 2)
-		exit(1);
+	{
+		if ((size_t)ft_atoi(av[1]) > (size_t)2147483647 \
+		|| (size_t)ft_atoi(av[1]) < (size_t)(-2147483648))
+			panic("Error\n");
+		exit(EXIT_SUCCESS);
+	}
 	else
 	{
 		str = pars_1(av);
@@ -56,13 +71,6 @@ int	main(int ac, char **av)
 			chek_lenght(str[len]);
 		chek_duplicate(str);
 		chek_sort(str);
-		list = fill_nodes(sort_int_arr(intcpy(str), len), str, list, len);
-		while (list)
-		{
-			printf("data = %d ", list->data);
-			printf("index = %d\n", list->index);
-			list = list->next;
-		}
-		
+		a = fill_nodes(sort_int_arr(intcpy(str), len), str, a, len);
 	}
 }

@@ -6,7 +6,12 @@ SRC		=	main.c\
 				fill_nodes.c\
 				pars.c\
 				pars2.c\
-				utils.c
+				utils.c\
+				panic.c\
+				list_swap.c\
+				list_push.c\
+				list_rotate.c\
+				list_revers_rotate.c
 
 OBJ			= $(SRC:.c=.o)
 
