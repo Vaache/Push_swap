@@ -12,17 +12,17 @@
 
 #include "push_swap.h"
 
-void	test1(t_list *list)
-{
-	printf("###############################\n");
-	while (list)
-	{
-		printf("data = [%d] ", list->data);
-		printf("index = [%d] \n", list->index);
-		list = list->next;
-	}
-	printf("###############################\n");
-}
+// void	test1(t_list *list)
+// {
+// 	printf("###############################\n");
+// 	while (list)
+// 	{
+// 		printf("data = [%d] ", list->data);
+// 		printf("index = [%d] \n", list->index);
+// 		list = list->next;
+// 	}
+// 	printf("###############################\n");
+// }
 
 void	check_valid(char **str)
 {
