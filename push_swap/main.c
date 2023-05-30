@@ -6,23 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:18 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/28 16:07:08 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/05/30 22:11:07 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	test1(t_list *list)
-// {
-// 	printf("###############################\n");
-// 	while (list)
-// 	{
-// 		printf("data = [%d] ", list->data);
-// 		printf("index = [%d] \n", list->index);
-// 		list = list->next;
-// 	}
-// 	printf("###############################\n");
-// }
 
 void	check_valid(char **str)
 {
@@ -72,5 +60,10 @@ int	main(int ac, char **av)
 		chek_duplicate(str);
 		chek_sort(str);
 		a = fill_nodes(sort_int_arr(intcpy(str), len), str, a, len);
+		len = ft_lstsize(a);
+		if (len <= 3)
+			param_3(&a);
+		if (len >= 4 && len <= 12)
+			param_5(&a, &b);
 	}
 }

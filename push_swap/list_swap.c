@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 12:18:53 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/27 19:28:00 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:45:35 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,22 @@
 
 void	swap(t_list **stack, int is_a)
 {
-	t_list	*first;
-	t_list	*second;
-	t_list	*third;
+	int	data;
+	int	index;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		return ;
-	first = *stack;
-	second = (*stack)->next;
-	third = (*stack)->next->next;
-	second->prev = NULL;
-	first->next = third;
-	third->prev = first;
-	second->next = first;
-	first->prev = second;
-	*stack = second;
-	if (is_a == 1)
-		write(1, SA_MSG, ft_strlen(SA_MSG));
-	else if (is_a == 0)
-		write(1, SB_MSG, ft_strlen(SB_MSG));
+	if (ft_lstsize((*stack)) >= 2)
+	{
+		data = (*stack)->data;
+		index = (*stack)->index;
+		(*stack)->data = (*stack)->next->data;
+		(*stack)->index = (*stack)->next->index;
+		(*stack)->next->data = data;
+		(*stack)->next->index = index;
+		if (is_a == 1)
+			write(1, SA_MSG, ft_strlen(SA_MSG));
+		else if (is_a == 0)
+			write(1, SB_MSG, ft_strlen(SB_MSG));
+	}
 }
 
 void	ss(t_list **stack_a, t_list **stack_b)

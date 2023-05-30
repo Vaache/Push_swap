@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:46:00 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/28 16:55:34 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:36:43 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,10 @@ int	ft_lstsize(t_list *lst)
 	int		i;
 
 	i = 0;
-	while (lst)
+	while (lst != NULL)
 	{
-		lst = lst->next;
 		i++;
+		lst = lst->next;
 	}
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:13 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/28 17:11:29 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:01:43 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,10 @@ t_list	*fill_nodes(int *arr, char **str, t_list *list, int len);
 t_list	*malloc_list(t_list *list, int data, int index);
 t_list	*push_back(t_list *list, int data, int index);
 
-/**************************************/
-/********** FUNCTIONS SA_SB_SS **********/
-/**************************************/
+/*********************************************/
+/************* FUNCTIONS SA_SB_SS ************/
+/*********************************************/
+void	ss(t_list **stack_a, t_list **stack_b);
 void	swap(t_list **stack, int is_a);
 
 /********************************************/
@@ -103,5 +104,12 @@ void	push_b(t_list **a, t_list **b);
 /**********************************************/
 void	revers_rotate(t_list **stack, int is_a);
 void	rrr(t_list **stack_a, t_list **stack_b);
+
+/***********************************/
+/***** FUNCTIONS FOR SORTINGS ******/
+/***********************************/
+void	param_5(t_list **stack_a, t_list **stack_b);
+void	param_3(t_list **stack_a);
+int		counter(int count);
 
 #endif
