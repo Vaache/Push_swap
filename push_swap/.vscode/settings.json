@@ -3,6 +3,8 @@
 		"stddef.h": "c",
 		"limits.h": "c",
 		"string.h": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"push_swap.h": "c",
+		"random": "c"
 	}
 }

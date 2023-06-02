@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:44:48 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/30 20:54:50 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:13:40 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	param_3(t_list **stack_a)
 		swap(stack_a, 1);
 }
 
-static int	finde_index(t_list **stack_a, int size)
+int	finde_index(t_list **stack_a, int size)
 {
 	int		index;
 	int		i;
@@ -36,7 +36,7 @@ static int	finde_index(t_list **stack_a, int size)
 	i = 0;
 	index = ft_lstsize((*stack_a)) - 1;
 	tmp = (*stack_a);
-	while (i < size / 2)
+	while (i <= size / 2)
 	{
 		if (tmp->index == index)
 			return (1);

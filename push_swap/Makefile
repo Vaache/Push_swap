@@ -1,5 +1,5 @@
 NAME	=	push_swap
-CFLAGS	=	-Wall -Wextra -Werror -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror #-fsanitize=
 CC		=	cc
 SRC		=	main.c\
 				ft_split.c\
@@ -13,7 +13,9 @@ SRC		=	main.c\
 				list_rotate.c\
 				list_revers_rotate.c\
 				counter.c\
-				alghorithm.c
+				alghorithm.c\
+				butterfly.c\
+				ft_free.c
 
 OBJ			= $(SRC:.c=.o)
 
@@ -34,3 +36,16 @@ fclean : clean
 		rm -rf $(NAME)
 
 re : fclean all
+
+
+test:	$(NAME)
+		$(eval ARG = $(shell jot -r 3 0 200000000))
+		./push_swap $(ARG) | ./checker $(ARG)
+		@echo -n "Instructions: "
+		@./push_swap $(ARG) | wc -l
+# test_my:	$(NAME)    $(BONUS_NAME)
+#                 $(eval ARG = $(shell jot -r 500 0 2000000))
+#                 ./push_swap $(ARG) | ./checker $(ARG)
+#                 @echo -n "Instructions: "
+#                 @./push_swap $(ARG) | wc -l
+# ./

@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 20:47:33 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/27 12:15:56 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/02 18:20:37 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ char	**pars_1(char **av)
 
 	i = 1;
 	str = NULL;
-	while (av[i])
+	while (av && av[i])
 	{
 		str = ft_strjoin(str, av[i]);
 		str = ft_strjoin(str, " ");
 		i++;
 	}
 	arr = ft_split(str, ' ');
-	free (str);
+	free(str);
 	return (arr);
 }
 

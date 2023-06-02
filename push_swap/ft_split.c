@@ -6,13 +6,13 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 16:58:07 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/22 19:58:22 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/02 15:25:30 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_free(char **s, size_t i)
+static void	ft_free_split(char **s, size_t i)
 {
 	while (i-- >= 0)
 		free (s[i]);
@@ -81,7 +81,7 @@ static char	**ft_chek_arr(const char *s, char c, char **arr)
 			arr[i++] = ft_sub_str1(s - k, 0, k);
 			if (!arr)
 			{
-				ft_free(arr, i);
+				ft_free_split(arr, i);
 				return (NULL);
 			}
 		}

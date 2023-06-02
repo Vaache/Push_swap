@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_nodes.c                                       :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 21:32:17 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/02 15:42:46 by vhovhann         ###   ########.fr       */
+/*   Created: 2023/05/31 17:57:12 by vhovhann          #+#    #+#             */
+/*   Updated: 2023/06/02 15:44:51 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*fill_nodes(int *arr, char **str, t_list *list, int len)
+void	ft_free(t_list **stack, char ***str)
 {
-	int		i;
-	int		j;
-	t_list	*tmp;
+	int	i;
 
 	i = 0;
-	j = 0;
-	tmp = list;
-	while (j < len)
+	if (stack && (*stack))
 	{
-		if (str[i] && arr[j] == ft_atoi(str[i]))
+		while ((*stack)->next != NULL)
 		{
-			tmp = push_back(tmp, ft_atoi(str[i]), j);
-			i++;
-			j = 0;
+			free((*stack)->prev);
+			(*stack) = (*stack)->next;
 		}
-		else
-			j++;
+		free((*stack)->prev);
 	}
-	list = tmp;
-	free(arr);
-	return (list);
+	while ((*str)[i])
+	{
+		free((*str)[i]);
+		i++;
+	}
+	free(*str);
 }

@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:13 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/30 20:01:43 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/02 18:34:54 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,10 @@ typedef struct s_list
 	int				data;
 }t_list;
 
-/****************************************/
-/*********** PUSH_SWAP_UTILS ************/
-/****************************************/
+/********************************************/
+/************* PUSH_SWAP_UTILS **************/
+/********************************************/
+void	ft_free(t_list **stack, char ***str);
 char	**ft_split(const char *s, char c);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(const char *str);
@@ -68,6 +69,7 @@ void	panic(char *str);
 /******* FUNCTION CHEK ARGUMENTS *******/
 /***************************************/
 int		*sort_int_arr(int *arr, int len);
+void	check_valid_av(char *str);
 void	chek_duplicate(char **s);
 void	chek_lenght(char *s);
 void	chek_sort(char **s);
@@ -105,11 +107,14 @@ void	push_b(t_list **a, t_list **b);
 void	revers_rotate(t_list **stack, int is_a);
 void	rrr(t_list **stack_a, t_list **stack_b);
 
-/***********************************/
-/***** FUNCTIONS FOR SORTINGS ******/
-/***********************************/
+/*****************************************************/
+/************** FUNCTIONS FOR SORTINGS ***************/
+/*****************************************************/
+void	butterfly(t_list **stack_a, t_list **stack_b);
 void	param_5(t_list **stack_a, t_list **stack_b);
 void	param_3(t_list **stack_a);
+int		finde_index(t_list **stack_a, int size);
+int		finde_index_b(t_list **stack, int size);
 int		counter(int count);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:14:22 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/05/30 22:19:59 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:26:08 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void	revers_rotate(t_list **stack, int is_a)
 {
-	t_list	*first;
-	t_list	*second;
-	t_list	*end;
+	t_list	*tmp;
+	t_list	*ptr;
 
+	tmp = (*stack);
 	if (ft_lstsize(*stack) >= 1)
 	{
-		first = (*stack);
-		second = (*stack)->next;
-		while ((*stack)->next != NULL)
-			(*stack) = (*stack)->next;
-		end = (*stack)->prev;
-		end->next = NULL;
-		(*stack)->next = first;
-		first->prev = (*stack);
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = (*stack);
+		(*stack) = tmp;
+		ptr = (*stack);
+		while (ptr->next->data != tmp->data)
+			ptr = ptr->next;
+		ptr->next = NULL;
 		(*stack)->prev = NULL;
 		if (is_a == 1)
 			write(1, RRA_MSG, ft_strlen(RRA_MSG));
