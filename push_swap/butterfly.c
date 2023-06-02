@@ -12,25 +12,6 @@
 
 #include "push_swap.h"
 
-// int	finde_index_b(t_list **stack, int size)
-// {
-// 	t_list	*tmp;
-// 	int		index;
-// 	int		i;
-
-// 	i = 0;
-// 	index = ft_lstsize((*stack)) - 1;
-// 	tmp = (*stack);
-// 	while (i <= size / 2)
-// 	{
-// 		if (tmp->index == index)
-// 			return (1);
-// 		tmp = tmp->next;
-// 		i++;
-// 	}
-// 	return(0);
-// }
-
 void	sort_list(t_list **stack_a, t_list **stack_b)
 {
 	int		size;
