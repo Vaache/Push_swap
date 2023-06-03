@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:46:27 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/02 17:55:45 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/02 22:20:45 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	sort_list(t_list **stack_a, t_list **stack_b)
 	{
 		tmp = (*stack_b);
 		size = ft_lstsize((*stack_b)) - 1;
+		i = 0;
 		while (i <= ft_lstsize((*stack_b)) / 2)
 		{
 			if (tmp->index == size)
@@ -32,15 +33,13 @@ void	sort_list(t_list **stack_a, t_list **stack_b)
 				tmp = tmp->next;
 			}
 		}
-		if (i < ft_lstsize((*stack_b)) / 2)
+		if (i <= ft_lstsize((*stack_b)) / 2)
 			while ((*stack_b)->index != size)
 				rotate(stack_b, 0);
 		else
 				while((*stack_b)->index != size)
 					revers_rotate(stack_b, 0);
 		push_a(stack_a, stack_b);
-		i = 0;
-		
 	}
 }
 

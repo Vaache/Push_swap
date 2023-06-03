@@ -39,7 +39,7 @@ re : fclean all
 
 
 test:	$(NAME)
-		$(eval ARG = $(shell jot -r 3 0 200000000))
+		$(eval ARG = $(shell jot -r 500 0 200000000))
 		./push_swap $(ARG) | ./checker $(ARG)
 		@echo -n "Instructions: "
 		@./push_swap $(ARG) | wc -l

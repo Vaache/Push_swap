@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:13 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/02 18:34:54 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/02 22:17:09 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,7 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 void	butterfly(t_list **stack_a, t_list **stack_b);
 void	param_5(t_list **stack_a, t_list **stack_b);
 void	param_3(t_list **stack_a);
-int		finde_index(t_list **stack_a, int size);
-int		finde_index_b(t_list **stack, int size);
-int		counter(int count);
+int		finde_index(t_list **stack_a, int size, int index);
+int		counter(int sz);
 
 #endif
