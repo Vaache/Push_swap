@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:18 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/02 18:35:04 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 11:06:18 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	check_valid_av(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str && str[i])
 	{

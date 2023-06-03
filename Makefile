@@ -27,22 +27,22 @@ all : $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean :
-		rm -rf $(OBJ)
+		@rm -rf $(OBJ)
 
 fclean : clean
-		rm -rf $(NAME)
+		@rm -rf $(NAME)
 
 re : fclean all
 
 
-#test:	$(NAME)
-#		$(eval ARG = $(shell jot -r 500 0 200000000))
-#		./push_swap $(ARG) | ./checker $(ARG)
-#		@echo -n "Instructions: "
-#		@./push_swap $(ARG) | wc -l
+test:	$(NAME)
+		$(eval ARG = $(shell jot -r 500 0 200000000))
+		./push_swap $(ARG) | ./checker $(ARG)
+		@echo -n "Instructions: "
+		@./push_swap $(ARG) | wc -l
 # test_my:	$(NAME)    $(BONUS_NAME)
 #                 $(eval ARG = $(shell jot -r 500 0 2000000))
 #                 ./push_swap $(ARG) | ./checker $(ARG)
