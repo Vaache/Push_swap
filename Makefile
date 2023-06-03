@@ -1,48 +1,41 @@
 NAME	=	push_swap
 CFLAGS	=	-Wall -Wextra -Werror #-fsanitize=
 CC		=	cc
-SRC		=	./src/main.c\
-				./src/ft_split.c\
-				./src/fill_nodes.c\
-				./src/pars.c\
-				./src/pars2.c\
-				./src/utils.c\
-				./src/panic.c\
-				./src/list_swap.c\
-				./src/list_push.c\
-				./src/list_rotate.c\
-				./src/list_revers_rotate.c\
-				./src/counter.c\
-				./src/alghorithm.c\
-				./src/butterfly.c\
-				./src/ft_free.c
-
-OBJ			= $(SRC:.c=.o)
+SRC		=	$(wildcard src/*.c)
+OBJS_DIR	=	obj
+MK		=	mkdir
+OBJS		= 	$(patsubst src/%.c, $(OBJS_DIR)/%.o, $(SRC))
 
 .PHONY	:	all clean fclean re
 
 all : $(NAME)
 
-%.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJS_DIR)/%.o : ./src/%.c | $(OBJS_DIR)
+		@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME) : $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME) : $(OBJS)
+		@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+		@echo COMPILED
+
+$(OBJS_DIR) :
+		@$(MK) -p $(OBJS_DIR)
 
 clean :
-		@rm -rf $(OBJ)
+		@rm -rf $(OBJS)
 
 fclean : clean
 		@rm -rf $(NAME)
 
-re : fclean all
+clean_obj_dir :
+		@rm -rf $(OBJS_DIR)
 
+re : clean fclean clean_obj_dir all
 
-test:	$(NAME)
-		$(eval ARG = $(shell jot -r 500 0 200000000))
-		./push_swap $(ARG) | ./checker $(ARG)
-		@echo -n "Instructions: "
-		@./push_swap $(ARG) | wc -l
+# test:	$(NAME)
+# 		$(eval ARG = $(shell jot -r 10000 0 200000000))
+# 		./push_swap $(ARG) | ./checker $(ARG)
+# 		@echo -n "Instructions: "
+# 		@./push_swap $(ARG) | wc -l
 # test_my:	$(NAME)    $(BONUS_NAME)
 #                 $(eval ARG = $(shell jot -r 500 0 2000000))
 #                 ./push_swap $(ARG) | ./checker $(ARG)
