@@ -27,7 +27,7 @@ fclean : clean
 		@rm -rf $(NAME)
 		@rm -rf $(OBJS_DIR)
 
-re : clean fclean clean_obj_dir all
+re : clean fclean all
 
 # test:	$(NAME)
 # 		$(eval ARG = $(shell jot -r 10000 0 200000000))
