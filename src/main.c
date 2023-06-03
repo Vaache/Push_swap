@@ -6,25 +6,23 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:18 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 13:19:58 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 15:34:09 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	check_valid_av(char *str)
+void	check_valid_av(char **str)
 {
 	int	i;
 
 	i = 0;
 	while (str && str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			break ;
+		if (ft_strlen(str[i]) == 0)
+			panic("Error\n");
 		i++;
 	}
-	if (str[i] == '\0')
-		panic("Error\n");
 }
 
 void	check_valid(char **str)
@@ -78,13 +76,11 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		exit(EXIT_SUCCESS);
 	if (ac == 2)
-	{
 		if (av[1][0] == '\0')
 			panic("Error\n");
-		check_valid_av(av[1]);
-	}
 	if (ac >= 2)
 	{
+		check_valid_av(av);
 		str = pars_1(av);
 		check_valid(str);
 		len = -1;

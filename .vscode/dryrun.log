@@ -1,0 +1,21 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/vhovhann/Desktop/Push_swap'
+mkdir -p obj
+cc -Wall -Wextra -Werror  -c src/alghorithm.c -o obj/alghorithm.o
+cc -Wall -Wextra -Werror  -c src/butterfly.c -o obj/butterfly.o
+cc -Wall -Wextra -Werror  -c src/counter.c -o obj/counter.o
+cc -Wall -Wextra -Werror  -c src/fill_nodes.c -o obj/fill_nodes.o
+cc -Wall -Wextra -Werror  -c src/ft_free.c -o obj/ft_free.o
+cc -Wall -Wextra -Werror  -c src/ft_split.c -o obj/ft_split.o
+cc -Wall -Wextra -Werror  -c src/list_push.c -o obj/list_push.o
+cc -Wall -Wextra -Werror  -c src/list_revers_rotate.c -o obj/list_revers_rotate.o
+cc -Wall -Wextra -Werror  -c src/list_rotate.c -o obj/list_rotate.o
+cc -Wall -Wextra -Werror  -c src/list_swap.c -o obj/list_swap.o
+cc -Wall -Wextra -Werror  -c src/main.c -o obj/main.o
+cc -Wall -Wextra -Werror  -c src/panic.c -o obj/panic.o
+cc -Wall -Wextra -Werror  -c src/pars.c -o obj/pars.o
+cc -Wall -Wextra -Werror  -c src/pars2.c -o obj/pars2.o
+cc -Wall -Wextra -Werror  -c src/utils.c -o obj/utils.o
+cc -Wall -Wextra -Werror   obj/alghorithm.o  obj/butterfly.o  obj/counter.o  obj/fill_nodes.o  obj/ft_free.o  obj/ft_split.o  obj/list_push.o  obj/list_revers_rotate.o  obj/list_rotate.o  obj/list_swap.o  obj/main.o  obj/panic.o  obj/pars.o  obj/pars2.o  obj/utils.o -o push_swap
+make: Leaving directory `/Users/vhovhann/Desktop/Push_swap'
+ 

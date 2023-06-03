@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:13 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 13:12:50 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 15:33:25 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	panic(char *str);
 /******* FUNCTION CHEK ARGUMENTS *******/
 /***************************************/
 int		*sort_int_arr(int *arr, int len);
-void	check_valid_av(char *str);
+void	check_valid_av(char **str);
 void	chek_duplicate(char **s);
 void	chek_lenght(char *s);
 void	chek_sort(char **s);
