@@ -1,21 +1,21 @@
 NAME	=	push_swap
 CFLAGS	=	-Wall -Wextra -Werror #-fsanitize=
 CC		=	cc
-SRC		=	main.c\
-				ft_split.c\
-				fill_nodes.c\
-				pars.c\
-				pars2.c\
-				utils.c\
-				panic.c\
-				list_swap.c\
-				list_push.c\
-				list_rotate.c\
-				list_revers_rotate.c\
-				counter.c\
-				alghorithm.c\
-				butterfly.c\
-				ft_free.c
+SRC		=	./src/main.c\
+				./src/ft_split.c\
+				./src/fill_nodes.c\
+				./src/pars.c\
+				./src/pars2.c\
+				./src/utils.c\
+				./src/panic.c\
+				./src/list_swap.c\
+				./src/list_push.c\
+				./src/list_rotate.c\
+				./src/list_revers_rotate.c\
+				./src/counter.c\
+				./src/alghorithm.c\
+				./src/butterfly.c\
+				./src/ft_free.c
 
 OBJ			= $(SRC:.c=.o)
 
