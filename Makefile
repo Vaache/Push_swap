@@ -25,8 +25,6 @@ clean :
 
 fclean : clean
 		@rm -rf $(NAME)
-
-clean_obj_dir :
 		@rm -rf $(OBJS_DIR)
 
 re : clean fclean clean_obj_dir all
