@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:46:27 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 11:08:11 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 13:19:39 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sort_list(t_list **stack_a, t_list **stack_b)
 {

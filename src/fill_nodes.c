@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 21:32:17 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/02 15:42:46 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 13:19:43 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 t_list	*fill_nodes(int *arr, char **str, t_list *list, int len)
 {

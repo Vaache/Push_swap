@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:14:22 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/02 16:26:08 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 13:19:51 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	revers_rotate(t_list **stack, int is_a)
 {

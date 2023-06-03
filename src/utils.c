@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:46:00 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/02 15:28:03 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 13:19:31 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 size_t	ft_strlen(const char *str)
 {

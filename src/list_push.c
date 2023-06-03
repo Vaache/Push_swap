@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:49:50 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/02 17:38:02 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 13:19:49 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	push_a(t_list **a, t_list **b)
 {

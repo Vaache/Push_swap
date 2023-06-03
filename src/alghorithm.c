@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:44:48 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/02 21:54:12 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 13:19:37 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	param_3(t_list **stack_a)
 {
