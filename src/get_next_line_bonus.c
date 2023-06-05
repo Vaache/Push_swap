@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 20:50:09 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/05 12:40:29 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 15:36:45 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/bonus.h"
+#include "bonus.h"
 
 char	*ft_str_line_next(char *s)
 {

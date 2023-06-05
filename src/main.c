@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:18 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 18:55:51 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 18:40:03 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,16 @@
 void	check_valid_av(char **str)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (str && str[i])
+	i = 1;
+	j = 0;
+	while (str[i])
 	{
-		if (ft_strlen(str[i]) == 0)
+		j = 0;
+		while (str[i][j] == ' ' && str[i][j] != '\0')
+			j++;
+		if (str[i][j] == '\0')
 			panic("Error\n");
 		i++;
 	}
