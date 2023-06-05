@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:46:27 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 13:19:39 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 10:13:35 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	sort_list(t_list **stack_a, t_list **stack_b)
 {
@@ -36,7 +36,7 @@ void	sort_list(t_list **stack_a, t_list **stack_b)
 		else
 			while ((*stack_b)->index != size)
 				revers_rotate(stack_b, 0);
-		push_a(stack_a, stack_b);
+		push_a(stack_a, stack_b, 1);
 	}
 }
 
@@ -51,13 +51,13 @@ void	butterfly(t_list **stack_a, t_list **stack_b)
 		n = counter(ft_lstsize((*stack_a)) - 1);
 		if ((*stack_a)->index <= value)
 		{
-			push_b(stack_b, stack_a);
+			push_b(stack_b, stack_a, 1);
 			rotate(stack_b, 0);
 			value++;
 		}
 		else if ((*stack_a)->index <= value + n)
 		{
-			push_b(stack_b, stack_a);
+			push_b(stack_b, stack_a, 1);
 			value++;
 		}
 		else

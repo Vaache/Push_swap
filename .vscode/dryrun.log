@@ -1,0 +1,9 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/vhovhann/Desktop/Push_swap'
+echo src/alghorithm.c src/butterfly.c src/counter.c src/fill_nodes.c src/ft_free.c src/ft_split.c src/list_push.c src/list_revers_rotate.c src/list_rotate.c src/list_swap.c src/main.c src/panic.c src/pars.c src/pars2.c src/utils.c
+echo
+echo bonus/bonus.c bonus/bonus_utils.c bonus/get_next_line_bonus.c bonus/get_next_line_utils.c src/alghorithm.c src/butterfly.c src/counter.c src/fill_nodes.c src/ft_free.c src/ft_split.c src/list_push.c src/list_revers_rotate.c src/list_rotate.c src/list_swap.c src/main.c src/panic.c src/pars.c src/pars2.c src/utils.c
+echo
+echo bonus/bonus.c bonus/bonus_utils.c bonus/get_next_line_bonus.c bonus/get_next_line_utils.c src/alghorithm.c src/butterfly.c src/counter.c src/fill_nodes.c src/ft_free.c src/ft_split.c src/list_push.c src/list_revers_rotate.c src/list_rotate.c src/list_swap.c src/panic.c src/pars.c src/pars2.c src/utils.c
+make: Leaving directory `/Users/vhovhann/Desktop/Push_swap'
+ 

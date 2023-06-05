@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 20:47:33 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 13:20:03 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 18:55:57 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 char	**pars_1(char **av)
 {

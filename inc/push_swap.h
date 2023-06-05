@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:13 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 15:33:25 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 11:16:45 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	panic(char *str);
 int		*sort_int_arr(int *arr, int len);
 void	check_valid_av(char **str);
 void	chek_duplicate(char **s);
+void	check_valid(char **str);
 void	chek_lenght(char *s);
 void	chek_sort(char **s);
 char	**pars_1(char **av);
@@ -83,26 +84,26 @@ t_list	*push_back(t_list *list, int data, int index);
 /*********************************************/
 /************* FUNCTIONS SA_SB_SS ************/
 /*********************************************/
-void	ss(t_list **stack_a, t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b, int is_ss);
 void	swap(t_list **stack, int is_a);
 
 /********************************************/
 /************* FUNCTIONS RA_RB_RR *************/
 /********************************************/
-void	rr(t_list **stack_a, t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b, int is_rr);
 void	rotate(t_list **stack, int is_a);
 
 /**************************************/
 /********** FUNCTIONS PA_PB ***********/
 /**************************************/
-void	push_a(t_list **b, t_list **a);
-void	push_b(t_list **a, t_list **b);
+void	push_a(t_list **b, t_list **a, int is_pa);
+void	push_b(t_list **a, t_list **b, int is_pb);
 
 /**********************************************/
 /************ FUNCTIONS RRA_RRB_RRR ***********/
 /**********************************************/
 void	revers_rotate(t_list **stack, int is_a);
-void	rrr(t_list **stack_a, t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b, int is_rrr);
 
 /*****************************************************/
 /************** FUNCTIONS FOR SORTINGS ***************/

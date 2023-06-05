@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:44:48 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 13:19:37 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 10:18:40 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	param_3(t_list **stack_a)
 {
@@ -57,10 +57,10 @@ void	param_5(t_list **stack_a, t_list **stack_b)
 		else
 			while ((*stack_a)->index != n)
 				revers_rotate(stack_a, 1);
-		push_b(stack_b, stack_a);
+		push_b(stack_b, stack_a, 1);
 		n++;
 	}
 	param_3(stack_a);
 	while ((*stack_b) != NULL)
-		push_a(stack_a, stack_b);
+		push_a(stack_a, stack_b, 1);
 }

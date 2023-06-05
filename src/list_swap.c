@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 12:18:53 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 13:19:55 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 10:05:04 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	swap(t_list **stack, int is_a)
 {
@@ -32,9 +32,10 @@ void	swap(t_list **stack, int is_a)
 	}
 }
 
-void	ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b, int is_ss)
 {
 	swap(stack_a, 2);
 	swap(stack_b, 2);
-	write(1, SS_MSG, ft_strlen(SS_MSG));
+	if (is_ss == 1)
+		write(1, SS_MSG, ft_strlen(SS_MSG));
 }

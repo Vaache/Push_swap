@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   counter.c                                          :+:      :+:    :+:   */
+/*   bonus.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/28 17:13:38 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 18:55:28 by vhovhann         ###   ########.fr       */
+/*   Created: 2023/06/03 22:00:53 by vhovhann          #+#    #+#             */
+/*   Updated: 2023/06/05 12:27:48 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef BONUS_H
+# define BONUS_H
 
-int	counter(int count)
-{
-	int	root;
-	int	log;
-	int	step;
+# include "push_swap.h"
+# include "get_next_line_bonus.h"
+# include <stdio.h>
 
-	log = 1;
-	root = 1;
-	step = 0;
-	while (root * root <= count)
-	{
-		root++;
-		step++;
-	}
-	while (log * 2 <= count)
-	{
-		log *= 2;
-		step++;
-	}
-	return (step);
-}
+void	chek_functions(char	*str, t_list *a, t_list *b, int *flag);
+void	read_steps(t_list *a, t_list *b);
+int		ft_strcmp(char *s1, char *s2);
+void	chek_sort_list(t_list *a);
+
+
+#endif

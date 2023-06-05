@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:33:36 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 13:19:53 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 10:13:02 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	rotate(t_list **stack, int is_a)
 {
@@ -35,9 +35,10 @@ void	rotate(t_list **stack, int is_a)
 	}
 }
 
-void	rr(t_list **stack_a, t_list **stack_b)
+void	rr(t_list **stack_a, t_list **stack_b, int is_rr)
 {
 	rotate(stack_b, 2);
 	rotate(stack_a, 2);
-	write(1, RR_MSG, ft_strlen(RR_MSG));
+	if (is_rr == 1)
+		write(1, RR_MSG, ft_strlen(RR_MSG));
 }

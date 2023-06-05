@@ -6,11 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 21:28:37 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 13:20:05 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/03 18:56:00 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	*sort_int_arr(int *arr, int len)
 {

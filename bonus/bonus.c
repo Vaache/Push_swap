@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   bonus.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 19:58:18 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 18:55:51 by vhovhann         ###   ########.fr       */
+/*   Created: 2023/06/03 18:22:21 by vhovhann          #+#    #+#             */
+/*   Updated: 2023/06/05 12:40:35 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/bonus.h"
 
-void	check_valid_av(char **str)
+static void	check_valid_b_av(char **str)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ void	check_valid_av(char **str)
 	}
 }
 
-void	check_valid(char **str)
+static void	check_valid_b(char **str)
 {
 	int	i;
 	int	j;
@@ -54,17 +54,11 @@ static void	norm(char **str, t_list *a, t_list *b, int len)
 	chek_duplicate(str);
 	chek_sort(str);
 	a = fill_nodes(sort_int_arr(intcpy(str), len), str, a, len);
-	len = ft_lstsize(a);
-	if (len <= 3)
-		param_3(&a);
-	if (len >= 4 && len <= 12)
-		param_5(&a, &b);
-	if (len > 12)
-		butterfly(&a, &b);
-	ft_free(&a, &str);
+	read_steps(a, b);
+	chek_sort_list(a);
 }
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
 	int		len;
 	char	**str;
@@ -80,9 +74,9 @@ int	main(int ac, char **av)
 			panic("Error\n");
 	if (ac >= 2)
 	{
-		check_valid_av(av);
+		check_valid_b_av(av);
 		str = pars_1(av);
-		check_valid(str);
+		check_valid_b(str);
 		len = -1;
 		norm(str, a, b, len);
 	}
