@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 18:22:21 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/05 18:38:55 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:22:36 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static void	norm(char **str, t_list *a, t_list *b, int len)
 	a = fill_nodes(sort_int_arr(intcpy(str), len), str, a, len);
 	read_steps(a, b);
 	chek_sort_list(a);
+	ft_free(&a, &str);
 }
 
 int	main(int ac, char **av)

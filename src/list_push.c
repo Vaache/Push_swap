@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:49:50 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/05 10:10:57 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 19:42:13 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ void	push_b(t_list **b, t_list **a, int is_pb)
 	if (!(*b))
 	{
 		(*b) = (*a);
-		(*a) = (*a)->next;
+		if ((*a)->next)
+			(*a) = (*a)->next;
 		(*a)->prev = NULL;
 		(*b)->next = NULL;
 		(*b)->prev = NULL;

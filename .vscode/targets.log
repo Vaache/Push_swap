@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Mon Jun  5 13:32:34 2023
+# Make data base, printed on Thu Jun  8 20:36:43 2023
 
 # Variables
 
@@ -32,6 +32,7 @@ MK = mkdir -p
 SHELL = /bin/sh
 # makefile (from `Makefile', line 17)
 RM = rm -rf
+ 
 # makefile (from `Makefile', line 11)
 B_OBJ_DIR = obj/checker
 # environment
@@ -39,7 +40,7 @@ VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{"*":"ru"},"_languagePac
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 18)
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 10)
@@ -47,30 +48,31 @@ OBJ_DIR = obj/main
 # makefile (from `Makefile', line 3)
 BONUS = checker
 # makefile (from `Makefile', line 13)
-INCS = -Iinc
+INCS = -I$(INC_DIR)
 # environment
 VSCODE_CWD = /
- 
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.yVCNqM3EQQ/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.lNoxj6O4Ux/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+# makefile (from `Makefile', line 8)
+B_SRCS = $(filter-out $(SRC_DIR)/main.c, $(SRCS))
 # makefile (from `Makefile', line 15)
-B_OBJS = $(patsubst $(SRC_DIR)/%.c, $(B_OBJ_DIR)/%.o, $(MAIN_SRC))
+B_OBJS = $(patsubst $(SRC_DIR)/%.c, $(B_OBJ_DIR)/%.o, $(B_SRCS)) 
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.9RzKV9Asf7/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.z7OE6FK27R/Listeners
 # automatic
 %F = $(notdir $%)
-# makefile (from `Makefile', line 8)
-MAIN_SRC = $(filter-out $(SRC_DIR)/main.c, $(SRCS_B))
 # environment
 PWD = /Users/vhovhann/Desktop/Push_swap
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from `Makefile', line 5)
+INC_DIR = inc
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -84,7 +86,7 @@ LOGNAME = vhovhann
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from `Makefile', line 9)
-HEADERS = $(wildcard inc/*.h)
+HEADERS = $(wildcard $(INC_DIR)/*.h)
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -106,9 +108,9 @@ MAKE_VERSION := 3.81
 # environment
 USER = vhovhann
 # makefile
-.DEFAULT_GOAL := test
+.DEFAULT_GOAL := all
 # makefile (from `Makefile', line 14)
-MAIN_OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+MAIN_OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(MAIN_SRCS))
 # makefile (from `Makefile', line 2)
 NAME = push_swap
 # automatic
@@ -155,20 +157,18 @@ LC_ALL = C
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# makefile (from `Makefile', line 7)
-SRCS_B = $(wildcard $(BONUS_DIR)/*.c) $(wildcard $(SRC_DIR)/*.c)
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
-# makefile (from `Makefile', line 5)
-BONUS_DIR = bonus
+# makefile (from `Makefile', line 7)
+MAIN_SRCS = $(filter-out $(SRC_DIR)/bonus.c, $(SRCS))
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1560
+VSCODE_PID = 2857
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=8/135=6%
+# Load=77/1024=8%, Rehash=0, Collisions=9/139=6%
 
 # Pattern-specific Variable Values
 
@@ -176,22 +176,21 @@ VSCODE_PID = 1560
 
 # Directories
 
-# . (device 16777224, inode 1039670): 10 files, no impossibilities.
-# src (device 16777224, inode 1039736): 18 files, no impossibilities.
-# inc (device 16777224, inode 1039734): 6 files, no impossibilities.
-# bonus (device 16777224, inode 1050111): 6 files, no impossibilities.
+# . (device 16777224, inode 1039670): 8 files, no impossibilities.
+# src (device 16777224, inode 1039736): 22 files, no impossibilities.
+# inc (device 16777224, inode 1039734): 5 files, no impossibilities.
 
-# 40 files, no impossibilities in 4 directories.
+# 35 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
 obj/main/%.o: src/%.c inc/bonus.h inc/get_next_line_bonus.h inc/push_swap.h
-#  commands to execute (from `Makefile', line 37):
+#  commands to execute (from `Makefile', line 30):
 	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 	
 
 obj/checker/%.o: src/%.c inc/bonus.h inc/get_next_line_bonus.h inc/push_swap.h
-#  commands to execute (from `Makefile', line 40):
+#  commands to execute (from `Makefile', line 33):
 	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 	
 
@@ -222,24 +221,12 @@ all: obj/main push_swap
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
 # Not a target:
-bonus/get_next_line_utils.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 obj/main/list_push.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 .PHONY: all clean fclean re bonus
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-bonus/get_next_line_bonus.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -258,7 +245,6 @@ obj/main: src
 #  Needs to be updated (-q is set).
 # automatic
 # @ := obj/main
- 
 # automatic
 # % := 
 # automatic
@@ -275,8 +261,8 @@ obj/main: src
 # ? := src
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=3/12=25%
-#  commands to execute (from `Makefile', line 31):
-	$(MK) $(OBJ_DIR)
+#  commands to execute (from `Makefile', line 24):
+	@$(MK) $(OBJ_DIR)
 	
 
 # Not a target:
@@ -288,7 +274,7 @@ obj/main: src
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-06-05 13:32:14
+#  Last modified 2023-06-06 17:33:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -318,16 +304,15 @@ obj/main/list_swap.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-test:
+test: push_swap
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 22):
-	@echo $(SRCS)
-	@echo
-	@echo $(SRCS_B)
-	@echo
-	@echo $(MAIN_SRC)
+#  commands to execute (from `Makefile', line 55):
+	$(eval ARG = $(shell jot -r 500 0 200000000))
+	./push_swap $(ARG) | ./checker $(ARG)
+	@echo -n "Instructions: "
+	@./push_swap $(ARG) | wc -l
 	
 
 # Not a target:
@@ -337,13 +322,8 @@ obj/main/panic.o:
 #  File has not been updated.
 
 # Not a target:
-bonus/bonus.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 obj/main/list_rotate.o:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -367,9 +347,15 @@ obj/checker/pars2.o:
 #  File has not been updated.
 
 # Not a target:
+obj/main/bonus_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src:
 #  Implicit rule search has been done.
-#  Last modified 2023-06-05 12:07:45
+#  Last modified 2023-06-05 15:35:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -379,8 +365,8 @@ obj/checker: src
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 34):
-	$(MK) $(B_OBJ_DIR)
+#  commands to execute (from `Makefile', line 27):
+	@$(MK) $(B_OBJ_DIR)
 	
 
 # Not a target:
@@ -406,9 +392,9 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 54):
-	$(RM) $(NAME)
-	$(RM) $(BONUS)
+#  commands to execute (from `Makefile', line 47):
+	@$(RM) $(NAME)
+	@$(RM) $(BONUS)
 	
 
 # Not a target:
@@ -436,6 +422,12 @@ obj/main/list_revers_rotate.o:
 #  File has not been updated.
 
 # Not a target:
+obj/main/get_next_line_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 obj/checker/utils.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -453,13 +445,25 @@ obj/checker/ft_free.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-checker: bonus/bonus.c bonus/bonus_utils.c bonus/get_next_line_bonus.c bonus/get_next_line_utils.c obj/checker/alghorithm.o obj/checker/butterfly.o obj/checker/counter.o obj/checker/fill_nodes.o obj/checker/ft_free.o obj/checker/ft_split.o obj/checker/list_push.o obj/checker/list_revers_rotate.o obj/checker/list_rotate.o obj/checker/list_swap.o obj/checker/panic.o obj/checker/pars.o obj/checker/pars2.o obj/checker/utils.o
+# Not a target:
+obj/checker/bonus_utils.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 48):
+
+checker: obj/checker/alghorithm.o obj/checker/bonus.o obj/checker/bonus_utils.o obj/checker/butterfly.o obj/checker/counter.o obj/checker/fill_nodes.o obj/checker/ft_free.o obj/checker/ft_split.o obj/checker/get_next_line_bonus.o obj/checker/get_next_line_utils.o obj/checker/list_push.o obj/checker/list_revers_rotate.o obj/checker/list_rotate.o obj/checker/list_swap.o obj/checker/panic.o obj/checker/pars.o obj/checker/pars2.o obj/checker/utils.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 41):
 	$(CC) $(CFLAGS) $(INCS) -o $(BONUS) $(B_OBJS)
 	
+
+# Not a target:
+obj/main/get_next_line_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all bonus
 #  Phony target (prerequisite of .PHONY).
@@ -478,20 +482,26 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 51):
-	$(RM) $(OBJ_ROOT_DIR)
+#  commands to execute (from `Makefile', line 44):
+	@$(RM) $(OBJ_ROOT_DIR)
 	
 
-push_swap: obj/main/alghorithm.o obj/main/butterfly.o obj/main/counter.o obj/main/fill_nodes.o obj/main/ft_free.o obj/main/ft_split.o obj/main/list_push.o obj/main/list_revers_rotate.o obj/main/list_rotate.o obj/main/list_swap.o obj/main/main.o obj/main/panic.o obj/main/pars.o obj/main/pars2.o obj/main/utils.o
+push_swap: obj/main/alghorithm.o obj/main/bonus_utils.o obj/main/butterfly.o obj/main/counter.o obj/main/fill_nodes.o obj/main/ft_free.o obj/main/ft_split.o obj/main/get_next_line_bonus.o obj/main/get_next_line_utils.o obj/main/list_push.o obj/main/list_revers_rotate.o obj/main/list_rotate.o obj/main/list_swap.o obj/main/main.o obj/main/panic.o obj/main/pars.o obj/main/pars2.o obj/main/utils.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 43):
+#  commands to execute (from `Makefile', line 36):
 	$(CC) $(CFLAGS) $(INCS) -o $(NAME) $(MAIN_OBJS)
 	
 
 # Not a target:
 obj/checker/list_revers_rotate.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/checker/get_next_line_utils.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -504,6 +514,12 @@ obj/main/pars.o:
 
 # Not a target:
 obj/main/counter.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/checker/get_next_line_bonus.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -533,13 +549,13 @@ obj/checker/pars.o:
 #  File has not been updated.
 
 # Not a target:
-bonus/bonus_utils.c:
+obj/checker/bonus.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=48/1024=5%, Rehash=0, Collisions=5/111=5%
+# Load=51/1024=5%, Rehash=0, Collisions=5/118=4%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -550,8 +566,7 @@ bonus/bonus_utils.c:
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
- 
 
-# Finished Make data base on Mon Jun  5 13:32:34 2023
+# Finished Make data base on Thu Jun  8 20:36:43 2023
 
  

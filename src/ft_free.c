@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:57:12 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/03 18:55:34 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 19:42:54 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 void	ft_free(t_list **stack, char ***str)
 {
-	int	i;
+	int		i;
+	t_list	*temp;
 
 	i = 0;
+	temp = *stack;
 	if (stack && (*stack))
 	{
-		while ((*stack)->next != NULL)
+		while (temp)
 		{
-			free((*stack)->prev);
-			(*stack) = (*stack)->next;
+			temp = temp->next;
+			free(*stack);
+			*stack = temp;
 		}
-		free((*stack)->prev);
+		free((*stack));
 	}
 	while ((*str)[i])
 	{

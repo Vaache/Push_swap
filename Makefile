@@ -15,7 +15,7 @@ MAIN_OBJS		= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(MAIN_SRCS))
 B_OBJS			= $(patsubst $(SRC_DIR)/%.c, $(B_OBJ_DIR)/%.o, $(B_SRCS)) 
 CC				= cc
 RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror #-fsanitize=address
 MK				= mkdir -p
 
 all:			$(OBJ_DIR) $(NAME)
@@ -34,8 +34,8 @@ $(B_OBJ_DIR)/%.o:	$(SRC_DIR)/%.c $(HEADERS)
 
 $(NAME):		$(MAIN_OBJS)
 				$(CC) $(CFLAGS) $(INCS) -o $(NAME) $(MAIN_OBJS)
-
 bonus: $(B_OBJ_DIR) $(OBJ_DIR) 	$(BONUS)
+
 
 $(BONUS):	$(B_OBJS)
 	$(CC) $(CFLAGS) $(INCS) -o $(BONUS) $(B_OBJS)
@@ -51,16 +51,16 @@ re:				fclean all bonus
 
 .PHONY:			all clean fclean re bonus
 
-# test:	$(NAME)
-# 		$(eval ARG = $(shell jot -r 200 0 200000000))
-# 		./push_swap $(ARG) | ./checker $(ARG)
-# 		@echo -n "Instructions: "
-# 		@./push_swap $(ARG) | wc -l
+test:	$(NAME)
+		$(eval ARG = $(shell jot -r 500 0 200000000))
+		./push_swap $(ARG) | ./checker $(ARG)
+		@echo -n "Instructions: "
+		@./push_swap $(ARG) | wc -l
 
 # test_my:		$(NAME)	$(BONUS_NAME)
-# 				$(eval ARG = $(shell jot -r 500 0 2000000))
+# 				$(eval ARG = $(shell jot -r 5 0 2000000))
 # 				./push_swap $(ARG) | ./checker $(ARG)
 # 				@echo -n "Instructions: "
 # 				@./push_swap $(ARG) | wc -l
-#				./push_swap $(ARG)
+# 				./push_swap $(ARG)
 

@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:58:18 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/05 18:40:03 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:23:03 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,5 @@ int	main(int ac, char **av)
 		len = -1;
 		norm(str, a, b, len);
 	}
+	return (0);
 }

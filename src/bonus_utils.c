@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 10:34:41 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/06/05 17:31:38 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/06/05 19:42:32 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	read_steps(t_list *a, t_list *b)
 	while (1)
 	{
 		read = get_next_line(0);
-		if (read == '\0')
+		if (read == NULL)
 			break ;
 		chek_functions(read, &a, &b, &flag);
 		free(read);
@@ -69,7 +69,7 @@ void	read_steps(t_list *a, t_list *b)
 		write(1, "KO\n", 3);
 		exit(1);
 	}
-	if (ft_lstsize(b) != 0)
+	if (ft_lstsize(b) > 0)
 	{
 		write(1, "KO\n", 3);
 		exit(1);
