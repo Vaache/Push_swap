@@ -51,12 +51,12 @@ re:				fclean all bonus
 
 .PHONY:			all clean fclean re bonus
 
-test:	$(NAME)
-		$(eval ARG = $(shell jot -r 500 0 200000000))
-		./push_swap $(ARG) | ./checker $(ARG)
-		@echo -n "Instructions: "
-		@./push_swap $(ARG) | wc -l
-
+#test:	$(NAME)
+#		$(eval ARG = $(shell jot -r 500 0 200000000))
+#		./push_swap $(ARG) | ./checker $(ARG)
+#		@echo -n "Instructions: "
+#		@./push_swap $(ARG) | wc -l
+#
 # test_my:		$(NAME)	$(BONUS_NAME)
 # 				$(eval ARG = $(shell jot -r 5 0 2000000))
 # 				./push_swap $(ARG) | ./checker $(ARG)
